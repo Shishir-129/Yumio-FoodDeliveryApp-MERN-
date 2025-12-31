@@ -24,6 +24,7 @@
     gap: 20px;
 }
 
+
 .footer-content-left li, .footer-content-center li, .footer-content-right li {
     list-style: none;
     margin-bottom: 10px;
@@ -44,4 +45,18 @@
     height: 2px;
     margin: 20px 0;
     background: grey;
+}
+
+/* Media Queries */
+
+@media (max-width: 750px) {
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .footer-copyright {
+        text-align: center;
+    }
 }
