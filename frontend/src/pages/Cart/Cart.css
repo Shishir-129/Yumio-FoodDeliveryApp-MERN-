@@ -97,6 +97,34 @@
     border-radius: 4px;
 }
 
+.cross {
+    border: none;
+    background: transparent;
+    color: #ff5f49;
+    font-size: 22px;
+    font-weight: 600;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.cross:hover {
+    background-color: #ffe5e0;
+}
+
+.cross:active {
+    transform: scale(0.95);
+}
+
+.cross:focus-visible {
+    outline: 2px solid #ff5f49;
+    outline-offset: 2px;
+}
+
 @media (max-width: 750px) {
     .cart-bottom {
         flex-direction: column-reverse;
