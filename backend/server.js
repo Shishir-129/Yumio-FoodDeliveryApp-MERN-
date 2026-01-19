@@ -17,6 +17,7 @@ connectDB(); // connect to database
 
 // api endpoints
 app.use('/api/food', foodRouter);
+app.use("/images",express.static('uploads'))
 
 app.get("/",(req,res)=> {       // request data from server and response back
     res.send("API Working")
