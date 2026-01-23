@@ -1,3 +1,6 @@
+// Main server file to set up Express server, connect to database, and define API endpoints
+//  Also starts the server
+
 import express from 'express'
 import cors from 'cors'
 import { connectDB } from './config/db.js'
