@@ -1,3 +1,5 @@
+// defines API endpoints(URLs) for food-related operations like adding, listing, and removing food items
+
 import express from 'express'
 import { addFood,listFood,removeFood } from '../controllers/foodController.js'
 import multer from 'multer'

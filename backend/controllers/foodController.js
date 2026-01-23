@@ -1,3 +1,6 @@
+// this file is used to handle food-related operations such as adding, listing, and removing food items
+// actual working of these operations is done here
+
 import foodModel from "../models/foodModel.js";
 import fs from 'fs';
 

@@ -1,3 +1,5 @@
+/* Context provider for managing cart state including food items and cart functionality */
+
 import { createContext, useEffect, useState } from "react";
 import { food_list } from "../assets/assets";
 

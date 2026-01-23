@@ -1,3 +1,5 @@
+/* Main application component that sets up routing and structure for the Yumio app */
+
 import React, { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";

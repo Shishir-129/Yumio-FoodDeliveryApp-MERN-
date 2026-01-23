@@ -1,3 +1,5 @@
+/* Entry point for the Yumio React application, setting up routing and global state management */
+
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'

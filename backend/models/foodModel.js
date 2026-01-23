@@ -1,3 +1,5 @@
+// this file is used to create a schema and model for storing food items in the database
+
 import mongoose from "mongoose";
 
 const foodSchema = new mongoose.Schema({
