@@ -9,12 +9,15 @@ const List = () => {
 
   const fetchList = async() => {
     const response = await axios.get(`${url}/api/food/list`);
-    console.log(response.data);
     if (response.data.success) {
       setList(response.data.data);
     } else {
       toast.error("Error");
     }
+  }
+
+  const removeFood = async(foodId) => {
+       console.log(foodId);
   }
 
   /* Function fetchList is called once when the component is mounted */
@@ -33,6 +36,17 @@ const List = () => {
           <b>Price</b>
           <b>Action</b>
         </div>
+        {list.map((item,index)=>{
+          return (
+            <div key={index} className='list-table-format'>
+              <img src={`${url}/images/`+item.image} alt="" />
+              <p>{item.name}</p>
+              <p>{item.category}</p>
+              <p>${item.price}</p>
+              <p onClick={() => removeFood(item._id)} className='cursor'>X</p>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
