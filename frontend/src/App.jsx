@@ -8,6 +8,7 @@ import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import Verify from "./pages/Verify/Verify";
 
 const App = () => {
 
@@ -19,11 +20,14 @@ const App = () => {
       <div className="app">
         <Navbar setShowLogin={setShowLogin}/>
         <Routes>
-          <Route path="/" element={<Home />} />
           {/* When we type '/' it will goto Home page*/}
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/" element={<Home />} />
           {/* When we type '/cart' it will goto Cart page*/}
+          <Route path="/cart" element={<Cart />} />
+          {/* When we type '/order' it will goto PlaceOrder page*/}
           <Route path="/order" element={<PlaceOrder />} />
+          {/* When we type '/verify' it will goto Verify page*/}
+          <Route path="/verify" element={<Verify/>} />
         </Routes>
       </div>
       <Footer />
