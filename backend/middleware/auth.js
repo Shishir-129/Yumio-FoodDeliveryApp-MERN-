@@ -11,11 +11,14 @@ const authMiddleware = async (req,res,next) => {
 
     try {
         const token_decode = jwt.verify(token,process.env.JWT_SECRET); // decode and verify token using secret key
+        if (!req.body) req.body = {}; // initialize req.body if undefined
         req.body.userId = token_decode.id; // the middleware takes the token, converts it to user ID, and using that ID, allows the user to perform actions like adding to cart, placing orders, etc.
         next(); // proceed to the next middleware or controller
     } catch (error) {
-        console.log("Error")
-        res.json({success: false,message:"Error!"})
+        console.log("JWT Verification Error:", error.message)
+        console.log("JWT_SECRET:", process.env.JWT_SECRET)
+        console.log("Token:", token)
+        res.json({success: false,message:"Error!", errorDetails: error.message})
     }
 }
 
