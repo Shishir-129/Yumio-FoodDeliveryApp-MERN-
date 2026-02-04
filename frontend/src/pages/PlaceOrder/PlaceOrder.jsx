@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './PlaceOrder.css'
 import { StoreContext } from '../../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,6 @@ import axios from 'axios';
 const PlaceOrder = () => {
 
     const {getTotalCartAmount,token,food_list,cartItems,url} = useContext(StoreContext);
-  const navigate = useNavigate();
 
     const [data,setData] = useState({
       firstName:"",
@@ -71,6 +70,17 @@ const PlaceOrder = () => {
         alert("Failed to place order: " + (error.response?.data?.message || "Connection error"));
       }
     }
+
+    const navigate = useNavigate();  // for navigation
+
+    useEffect(() => {  // redirect to cart if not logged in or cart is empty
+      if (!token) {
+        navigate('/cart')
+      }
+      else if (getTotalCartAmount() === 0) {
+        navigate('/cart') // redirect to cart if cart is empty
+      }
+    },[token])
 
   return (
     <form onSubmit={placeOrder} className="place-order">

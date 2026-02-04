@@ -9,6 +9,7 @@ import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import Verify from "./pages/Verify/Verify";
+import MyOrders from "./pages/MyOrders/MyOrders";
 
 const App = () => {
 
@@ -28,6 +29,8 @@ const App = () => {
           <Route path="/order" element={<PlaceOrder />} />
           {/* When we type '/verify' it will goto Verify page*/}
           <Route path="/verify" element={<Verify/>} />
+          {/* When we type '/myorders' it will goto MyOrders page*/}
+          <Route path="/myorders" element={<MyOrders/>} />
         </Routes>
       </div>
       <Footer />
