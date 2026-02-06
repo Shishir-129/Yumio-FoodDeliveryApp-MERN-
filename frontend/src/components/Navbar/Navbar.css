@@ -47,11 +47,15 @@
     cursor: pointer;
 }
 
-.navbar-search-icon{
+.search-icon {
+    cursor:pointer;
+}
+
+.navbar-basket-icon{
     position: relative;
 }
 
-.navbar-search-icon .dot{
+.navbar-basket-icon .dot{
     position: absolute;
     min-width: 10px;
     min-height: 10px;
@@ -79,7 +83,7 @@
     background-color: #fff2ef;
     padding: 12px 25px;
     border-radius: 4px;
-    border: 1px solid tomato;
+    border: 2px solid tomato;
     outline: 2px solid white;
     list-style: none;
 }
